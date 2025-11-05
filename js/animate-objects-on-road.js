@@ -1,29 +1,32 @@
 "use strict";
 
-// hent DOM elementer -
-const getRedCar = document.getElementById("redCar"); // intet . grundet det er et id i html
+// Hent DOM elementer
+
+const getRedCar = document.getElementById("redCar");
 const getPoliceCar = document.getElementById("policeCar");
 const getBlueCar = document.getElementById("blueCar");
 
-const getSun = document.querySelector(".sun"); // . fordi det er en classe i html
-const getScene = document.querySelector(".scene");
+// Hent også lige baggrund og sol
 
-// henter lydfiler
+const sun = document.querySelector(".sun");
+const scene = document.querySelector(".scene");
+
+// Sæt lyde på bilerne + opretter lyd objekter
 const soundRedCar = new Audio();
-soundRedCar.src = "../sound/red-car-horn.wav";
+    soundRedCar.src = "../sound/red-car-horn.wav";
 
 const soundPoliceCar = new Audio();
-soundPoliceCar.src = "../sound/police-car-sound.wav";
+    soundPoliceCar.src = "../sound/police-car-sound.wav";
 
 const soundBlueCar = new Audio();
-soundBlueCar.src = "../sound/blue-car-sound.wav";
+    soundBlueCar.src = "../sound/blue-car-sound.wav";
 
-// Tilføj advent listeners
+// Tilføj event listeners til bilerne
 
 if (getRedCar) {
-  getRedCar.addEventListener("click", () => {
-    soundRedCar.play();
-  });
+    getRedCar.addEventListener("click", ()=> {
+        soundRedCar.play();
+    })
 }
 
 if (getPoliceCar) {
@@ -35,6 +38,17 @@ if (getPoliceCar) {
 if (getBlueCar) {
   getBlueCar.addEventListener("click", () => {
     soundBlueCar.play();
-
   });
 }
+
+// Solen skal have en funktion
+
+if (sun && scene) {
+    sun.addEventListener("click", ()=> {
+        scene.classList.toggle("night");
+    });
+}
+
+
+
+
