@@ -135,18 +135,18 @@
 
 .car2 {
    position: absolute;
-   bottom: 9.0vh;
+   bottom: 10.5vh;
    width: var(--car-w);
-   max-width: 282vw;
+   max-width: 28vw;
    z-index: 0;
-   left: calc(-1*var(--off-car2));
+   right: calc(-1*var(--off-car2));
    animation: car2 2s linear infinite;
 }
 
 @keyframes car2 {
-   0% {transform:translateX(0);}
+   0% {transform:translateX(0) rotateY(180deg);}
    90%,
-   100% {transform:translateX(calc(100vw + var(--off-car2)));}
+   100% {transform:translateX(calc(-100vw - var(--off-car2)))rotateY(180deg);}
 }
 
 /* car3: venstre → højre (spejlvendt) */
